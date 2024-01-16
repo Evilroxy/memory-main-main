@@ -26,24 +26,23 @@ for (let i = 0; i < cards.length; i++) {
   });
 }
 
-// function verify() {
-//   if (clicked1.getAttribute("data-key") !== cards[i].getAttribute("data-key")) {
-//       setTimeout(() => {
-//         clicked1.classList.remove("open");
-//         cards[i].classList.remove("open");
-//       }, 1000);
-//   }
-//   clicked1;
-//   cards[i];
-// }
 
-/*function melange() {
+
+function melange(arr) {
   const results = [];
-  const length = cards.length;
-  for (let i = 0; i < length; i++) {
-    const random = Math.floor(Math.random() * cards.length);
-    results.push(cards[random]);
-    cards = cards.filter((card) => card !== cards[random]);
+  // const length = cards.length;
+  while (arr.length > 0) {
+    randomIndex = Math.Floor(Math.random() * arr.length)
+    results.push(arr[randomIndex])
+    arr.slice(1,randomIndex).concat(arr.slice(randomIndex + 1))
+    arr = [];
+    return results
   }
-  return results;
-} */
+}
+  // for (let i = 0; i < length; i++) {
+  //   const random = Math.floor(Math.random() * cards.length);
+  //   results.push(cards[random]);
+  //   cards = cards.filter((card) => card !== cards[random]);
+  // }
+  // return results;
+ 
